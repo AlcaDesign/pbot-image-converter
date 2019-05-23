@@ -36,8 +36,10 @@ if(!argv.length) {
 	await fs.promises.unlink(filePath + '.raw');
 	// Convert RGB hex values into PBot palette characters.
 	const pbotData = mapHexToPbotCode(palette, data);
-	// Convert the pixel data to panels, map to RLE, join with periods.
-	const rle = pixelDataToPanels(pbotData).map(rleEncode).join('.');
+	// Convert the pixel data to panels.
+	const panels = pixelDataToPanels(pbotData);
+	// Map panels to RLE, join with periods.
+	const rle = panels.map(rleEncode).join('.');
 	// Compress the RLE data.
 	const buf = await compress(rle);
 	// Log chat command.
