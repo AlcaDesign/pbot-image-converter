@@ -7,7 +7,7 @@ const path = require('path');
 // Load lib functions.
 const { getRGB, getPalette } = require('./lib/color');
 const { saveImage, convertImage } = require('./lib/image');
-const { pixelDataToPanels } = require('./lib/pixelBot');
+const { pixelDataToPanels, mapHexToPbotCode } = require('./lib/pixelBot');
 const { compress, rleEncode } = require('./lib/encode');
 
 // Get the arguments from the CLI.
@@ -34,19 +34,8 @@ if(!argv.length) {
 	// Delete the temp files
 	await fs.promises.unlink(filePath);
 	await fs.promises.unlink(filePath + '.raw');
-	// Convert HEX pixel data into PBot palette characters.
-	const pbotData = data.map(n => {
-		// Find the index of the color in the palette.
-		const index = palette.indexOf(n);
-		// This shouldn't get called in normal cases.
-		if(index === -1) {
-			throw `Could not find matching palette item for "${n}"`;
-			// return ' ';
-			// return 'e';
-		}
-		// Convert index to ASCII text. 97-123 are lowercase alphabet.
-		return String.fromCharCode(index + 97);
-	});
+	// Convert RGB hex values into PBot palette characters.
+	const pbotData = mapHexToPbotCode(palette, data);
 	// Convert the pixel data to panels, map to RLE, join with periods.
 	const rle = pixelDataToPanels(pbotData).map(rleEncode).join('.');
 	// Compress the RLE data.
