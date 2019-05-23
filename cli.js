@@ -5,6 +5,7 @@ const os = require('os');
 const path = require('path');
 
 // Load lib functions.
+const { createPaletteFetcher } = require("./lib/createPaletteFetcher.node")
 const { getRGB, getPalette } = require('./lib/color');
 const { saveImage, convertImage } = require('./lib/image');
 const { pixelDataToPanels, mapHexToPbotCode } = require('./lib/pixelBot');
@@ -21,7 +22,7 @@ if(!argv.length) {
 
 // Run an async IIFE.
 (async () => {
-	const palette = await getPalette();
+	const palette = await getPalette(createPaletteFetcher());
 	// TODO: Remove dependence on file system
 	const uuid = crypto.randomBytes(16).toString('hex');
 	const filePath = path.join(os.tmpdir(), uuid);
