@@ -21,5 +21,6 @@ $ node cli.js <url>
 	imagemagick.org
 
 
+[njs]: https://nodejs.org
 [im]: https://imagemagick.org/
 [clp]: https://imagemagick.org/script/command-line-processing.php
