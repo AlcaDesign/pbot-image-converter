@@ -1,9 +1,12 @@
 # Install
 
-Install [ImageMagick][im] on your system and add it to your environment path.
+- Install [Node.js][njs] on your system.
+- Install [ImageMagick][im] on your system and add it to your environment path.
+- Git clone the repository and change into the directory:
 
 ```bash
 $ git clone git@github.com:AlcaDesign/pbot-image-converter.git
+$ cd pbot-image-converter
 ```
 
 # Usage
