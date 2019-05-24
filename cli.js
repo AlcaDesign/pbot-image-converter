@@ -35,7 +35,7 @@ if(!argv.length) {
 	await fs.promises.unlink(filePath);
 	await fs.promises.unlink(filePath + '.raw');
 	// Convert RGB hex values into PBot palette characters.
-	const pbotData = mapHexToPbotCode(palette, data);
+	const pbotData = mapHexToPbotCode(palette, data, 'e');
 	// Convert the pixel data to panels.
 	const panels = pixelDataToPanels(pbotData);
 	// Map panels to RLE, join with periods.
