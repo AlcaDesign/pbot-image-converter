@@ -13,8 +13,8 @@
     "jsdom": "^15.1.1",
     "jsdom-worker": "^0.1.0",
     "mitt": "^1.1.3",
+    "node-fetch": "^2.6.0",
     "pkg-dir": "^4.2.0",
-    "wasm-imagemagick": "^1.2.1",
-    "whatwg-fetch": "^3.0.0"
+    "wasm-imagemagick": "^1.2.1"
   }
 }
