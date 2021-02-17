@@ -89,3 +89,6 @@ typings/
 
 # Visual Studio Code configuration
 .vscode/
+
+# Built web assets
+dist/

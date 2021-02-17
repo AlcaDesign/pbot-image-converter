@@ -37,6 +37,11 @@ const pbot = require('pbot-image-converter');
 $ convert ./assets/pb-palette.png RGBA:./assets/palette.raw
 ```
 
+## Browser Build
+
+* Start development server: `npm run start`
+* Build: `npm run build`
+
 ## TODO
 
 - Skip using the file system. See ["Command-line Processing"][clp] on

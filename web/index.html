@@ -1,0 +1,30 @@
+<html>
+<body>
+	<div class="controls">
+		<label for="file-select">Image</label>
+		<!-- <input id="file-select" type="text" disabled value="http://localhost:8081/140.jpg"> -->
+		<input id="file-select" type="text" disabled value="https://placekitten.com/200/140">
+
+		<button id="convert" disabled>Convert</button>
+	</div>
+
+	<code id="chat-command"></code>
+
+	<style>
+		.controls {
+			display: flex;
+		}
+
+		.controls input {
+			flex: 1;
+			margin: 0 16px;
+		}
+
+		code {
+			display: block;
+			margin-top: 16px;
+			overflow-wrap: break-word;
+		}
+	</style>
+</body>
+</html>
